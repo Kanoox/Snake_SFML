@@ -115,6 +115,11 @@ int generateRandomPosition(int min, int max) {
     return (adjustedMin + std::rand() % (adjustedMax - adjustedMin + 1)) * 20;
 }
 
+// Fonction pour générer une position aléatoire pour x et y dans la plage [0, 800] pour x et [0, 600] pour y
+void regeneratePosition(int &x, int &y) {
+    x = std::rand() % 20 * 20;
+    y = std::rand() % 20 * 20;
+}
 int main() {
     const int windowWidth = 800;
     const int windowHeight = 800;
@@ -187,7 +192,15 @@ int main() {
 
         if (snake.checkCollisionWithApple(apple)) {
             snake.grow();
-            apple.setPosition(std::rand() % 20 * 20, std::rand() % 20 * 20);
+            int x, y;
+            std::cout << "x = " << x << " y = " << y << std::endl;
+
+            // Générer des positions jusqu'à ce que la condition soit respectée
+            do {
+                regeneratePosition(x, y);
+            } while (!(x > 60 && y < 720 && y >= 60 && x <= 720));
+
+            apple.setPosition(x, y);
         }
 
         window.clear();
