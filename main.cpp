@@ -1,3 +1,6 @@
+// Crée par Florentin (Kanoox)
+// ©2024
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
