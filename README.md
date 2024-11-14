@@ -34,7 +34,7 @@ Be in the project directory and launch.
 
 (Windows)
 ```bash
-  g++ toto.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network && ./a.out
+  g++ main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network && ./main
 ```
 
 (MacOs)
